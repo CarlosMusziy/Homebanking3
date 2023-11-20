@@ -41,8 +41,8 @@ public class UserControllers {
 
     }
     @GetMapping(value="/users/{id}")
-    public UserDTO getUserById(@PathVariable Long id){
-        return null;
+    public ResponseEntity<UserDTO>getUserById(@PathVariable Long id){
+        return ResponseEntity.status(HttpStatus.OK).body(service.getUserById(id));
 
     }
 

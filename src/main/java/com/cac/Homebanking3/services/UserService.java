@@ -35,4 +35,9 @@ public class UserService {
 
         return UserMapper.userToDto(user);
     }
+    public UserDTO getUserById(Long id){
+        User entity= repository.findById(id).get();
+        return UserMapper.userToDto(entity);
+    }
+
 }

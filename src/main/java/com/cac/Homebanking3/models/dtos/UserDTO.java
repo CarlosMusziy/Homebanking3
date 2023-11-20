@@ -43,4 +43,14 @@ public class UserDTO {
     private String email;
     private String surname;
     private String dni;
+
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
