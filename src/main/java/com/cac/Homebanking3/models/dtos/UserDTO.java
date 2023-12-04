@@ -3,6 +3,8 @@ package com.cac.Homebanking3.models.dtos;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @AllArgsConstructor
 @NoArgsConstructor
 
@@ -44,6 +46,9 @@ public class UserDTO {
     private String surname;
     private String dni;
 
+
+
+
     private Long id;
 
     public Long getId() {
@@ -53,4 +58,5 @@ public class UserDTO {
     public void setId(Long id) {
         this.id = id;
     }
+
 }

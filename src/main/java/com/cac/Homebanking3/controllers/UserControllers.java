@@ -4,6 +4,7 @@ package com.cac.Homebanking3.controllers;
 
 
 
+import com.cac.Homebanking3.exceptions.UserNotExistsException;
 import com.cac.Homebanking3.models.dtos.UserDTO;
 import com.cac.Homebanking3.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,13 +48,22 @@ public class UserControllers {
     }
 
 
-    public void upDateAllUsers(){}
-    public void upDateUser(){}
+
     @PostMapping(value="/users")
     public ResponseEntity createUser(@RequestBody UserDTO user){
 
         return ResponseEntity.status(HttpStatus.CREATED).body(service.createUser(user));
     }
-    public void deleteUser(){}
+    @DeleteMapping(value="/users/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable Long id){
+            service.deleteUser(id);
+            return ResponseEntity.status(HttpStatus.OK).body("El usuario con id" +id+"ha sido eliminado");
+
+    }
+    @PutMapping(value="/users/{id}")
+    public ResponseEntity<UserDTO> upDateUser(@PathVariable Long id,@RequestBody UserDTO user){
+
+        return ResponseEntity.status(HttpStatus.OK).body(service.upDateUser(id,user));
+    }
 
 }

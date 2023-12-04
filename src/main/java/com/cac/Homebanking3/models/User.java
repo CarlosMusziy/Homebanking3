@@ -2,6 +2,8 @@ package com.cac.Homebanking3.models;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 //prueba
 @Entity
 @Table(name="usuarios")
@@ -69,5 +71,6 @@ public class User {
     private String surname;
 
     private String dni;
+
 
 }
