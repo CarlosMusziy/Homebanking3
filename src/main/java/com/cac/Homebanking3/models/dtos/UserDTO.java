@@ -46,13 +46,13 @@ public class UserDTO {
     private String surname;
     private String dni;
 
-    private Date update_At;
+    private String update_At;
 
-    public Date getUpdate_At() {
+    public String getUpdate_At() {
         return update_At;
     }
 
-    public void setUpdate_At(Date update_At) {
+    public void setUpdate_At(String update_At) {
         this.update_At = update_At;
     }
 
