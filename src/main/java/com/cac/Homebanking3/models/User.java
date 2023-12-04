@@ -1,16 +1,12 @@
 package com.cac.Homebanking3.models;
 
-
 import jakarta.persistence.*;
-import lombok.Builder;
 
 import java.util.Date;
-import java.util.List;
 
 //prueba
 @Entity
 @Table(name="usuarios")
-//@Builder
 
 public class User {
     @Id
@@ -74,19 +70,7 @@ public class User {
 
     private String surname;
 
-    private Date update_At;
-
-    public Date getUpdate_At() {
-        return update_At;
-    }
-
-    public void setUpdate_At(Date update_At) {
-        this.update_At = update_At;
-    }
-
     private String dni;
-    @OneToMany(mappedBy = "owner",cascade = CascadeType.ALL,orphanRemoval = true)
 
-    private List<Account> accounts;
 
 }
