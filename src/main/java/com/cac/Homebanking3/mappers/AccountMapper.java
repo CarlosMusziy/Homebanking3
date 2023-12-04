@@ -15,6 +15,7 @@ public class AccountMapper {
         dto.setAmount((account.getAmount()));
         dto.setType(account.getType());
         dto.setId(account.getId());
+        dto.setUpdate_At(account.getUpdate_At());
         return dto;
 
     }
@@ -26,6 +27,7 @@ public class AccountMapper {
         account.setCbu(dto.getCbu());
         account.setAmount((dto.getAmount()));
         account.setType(dto.getType());
+        account.setUpdate_At(dto.getUpdate_At());
         return account;
 
     }

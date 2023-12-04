@@ -4,6 +4,7 @@ import com.cac.Homebanking3.models.enums.AccountType;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 @Table(name="cuentas")
@@ -60,6 +61,16 @@ public class Account {
     private String cbu;
     private String alias;
     private BigDecimal amount;
+
+    private Date update_At;
+
+    public Date getUpdate_At() {
+        return update_At;
+    }
+
+    public void setUpdate_At(Date update_At) {
+        this.update_At = update_At;
+    }
 
     @ManyToOne
     private User owner;

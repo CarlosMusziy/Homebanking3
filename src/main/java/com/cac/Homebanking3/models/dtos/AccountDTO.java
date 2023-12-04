@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.Date;
+
 @AllArgsConstructor
 @NoArgsConstructor
 public class AccountDTO {
@@ -58,4 +60,13 @@ public class AccountDTO {
         this.amount = amount;
     }
 
+    private Date update_At;
+
+    public Date getUpdate_At() {
+        return update_At;
+    }
+
+    public void setUpdate_At(Date update_At) {
+        this.update_At = update_At;
+    }
 }
