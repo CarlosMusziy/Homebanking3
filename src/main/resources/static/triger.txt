@@ -17,3 +17,13 @@ BEGIN
      set NEW.update_at= CURRENT_TIMESTAMP();
  END
  $$
+
+ DELIMITER $$
+DROP TRIGGER IF EXISTS trigger_update_cuentas$$
+CREATE TRIGGER trigger_mod_cuentas
+before INSERT
+ON cuentas FOR EACH ROW
+BEGIN
+     set NEW.update_at= CURRENT_TIMESTAMP();
+ END
+ $$
