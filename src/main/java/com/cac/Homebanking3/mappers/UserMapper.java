@@ -15,7 +15,7 @@ public class UserMapper {
         user.setDni(dto.getDni());
         user.setEmail(dto.getEmail());
         user.setPassword(dto.getPassword());
-        user.setUpdate_At(dto.getUpdate_At());
+
         return user;
     }
         public static UserDTO userToDto(User user){
@@ -27,7 +27,7 @@ public class UserMapper {
         dto.setDni((user.getDni()));
         dto.setEmail(user.getEmail());
         dto.setPassword(user.getPassword());
-        dto.setUpdate_At(user.getUpdate_At());
+
         return dto;
     }
 

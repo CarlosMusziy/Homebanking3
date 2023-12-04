@@ -46,15 +46,8 @@ public class UserDTO {
     private String surname;
     private String dni;
 
-    private String update_At;
 
-    public String getUpdate_At() {
-        return update_At;
-    }
 
-    public void setUpdate_At(String update_At) {
-        this.update_At = update_At;
-    }
 
     private Long id;
 
