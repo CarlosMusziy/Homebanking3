@@ -27,7 +27,8 @@ public class UserMapper {
         dto.setDni((user.getDni()));
         dto.setEmail(user.getEmail());
         dto.setPassword(user.getPassword());
-
+        dto.setUpdate_At(user.getUpdate_At());
+        dto.setMod_user(user.getMod_user());
         return dto;
     }
 

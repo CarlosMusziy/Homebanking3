@@ -72,5 +72,25 @@ public class User {
 
     private String dni;
 
+    private Date update_At;
+
+    public Date getUpdate_At() {
+        return update_At;
+    }
+
+    public void setUpdate_At(Date update_At) {
+        this.update_At = update_At;
+    }
+
+    public Date getMod_user() {
+        return mod_user;
+    }
+
+    public void setMod_user(Date mod_user) {
+        this.mod_user = mod_user;
+    }
+
+    private Date mod_user;
+
 
 }
