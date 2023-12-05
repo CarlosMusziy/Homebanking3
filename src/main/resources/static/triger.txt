@@ -1,29 +1,19 @@
 DELIMITER $$
 DROP TRIGGER IF EXISTS trigger_update$$
-CREATE TRIGGER trigger_insert_usuarios
+
+CREATE TRIGGER trigger_update
 before INSERT
 ON usuarios FOR EACH ROW
 BEGIN
      set NEW.update_at= now();
+     set NEW.mod_user= now();
  END
  $$
-
- DELIMITER $$
-DROP TRIGGER IF EXISTS trigger_update_cuentas$$
-CREATE TRIGGER trigger_update_cuentas
-before INSERT
-ON cuentas FOR EACH ROW
+ CREATE TRIGGER trigger_mod_user
+before UPDATE
+ON usuarios FOR EACH ROW
 BEGIN
-     set NEW.update_at= CURRENT_TIMESTAMP();
- END
- $$
 
- DELIMITER $$
-DROP TRIGGER IF EXISTS trigger_update_cuentas$$
-CREATE TRIGGER trigger_mod_cuentas
-before INSERT
-ON cuentas FOR EACH ROW
-BEGIN
-     set NEW.update_at= CURRENT_TIMESTAMP();
+     set NEW.mod_user= now();
  END
  $$
