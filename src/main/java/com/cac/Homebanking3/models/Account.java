@@ -64,6 +64,15 @@ public class Account {
     private BigDecimal amount;
 
     private Date update_At;
+    private Date mod_account;
+
+    public Date getMod_account() {
+        return mod_account;
+    }
+
+    public void setMod_account(Date mod_account) {
+        this.mod_account = mod_account;
+    }
 
     public Date getUpdate_At() {
         return update_At;
