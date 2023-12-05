@@ -30,6 +30,7 @@ BEGIN
       set NEW.mod_account= now();
   END
   $$
+  ---------------------------------
   CREATE TRIGGER trigger_mod_account
  before UPDATE
  ON cuentas FOR EACH ROW
