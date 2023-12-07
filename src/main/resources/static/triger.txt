@@ -1,41 +1,53 @@
+
+
+6)	Trigger Automático:
+Implementar un Trigger en BBDD para que, en las tablas,
+ cada vez que se modifique datos de un usuario o cuenta,
+ se actualice el campo “updated_at” de ese registro modificado,
+  es decir, después de modificarse (AFTER UPDATE)
+
+
 DELIMITER $$
-DROP TRIGGER IF EXISTS trigger_update$$
+DROP TRIGGER IF EXISTS trigger_new_user$$
 
-CREATE TRIGGER trigger_update
-before INSERT
+CREATE TRIGGER trigger_new_user
+BEFORE INSERT
 ON usuarios FOR EACH ROW
 BEGIN
-     set NEW.update_at= now();
-     set NEW.mod_user= now();
- END
+     set NEW.new_user_date= now();
+     set NEW.mod_user_date= now();
+ END;
  $$
+ DROP TRIGGER IF EXISTS trigger_mod_user$$
  CREATE TRIGGER trigger_mod_user
-before UPDATE
+BEFORE UPDATE
 ON usuarios FOR EACH ROW
 BEGIN
 
-     set NEW.mod_user= now();
- END
+     set NEW.mod_user_date= now();
+ END;
  $$
- -----------------------------------------
 
  DELIMITER $$
  DROP TRIGGER IF EXISTS trigger_new_account$$
 
  CREATE TRIGGER trigger_new_account
- before INSERT
+BEFORE INSERT
  ON cuentas FOR EACH ROW
  BEGIN
-      set NEW.update_at= now();
-      set NEW.mod_account= now();
-  END
+      set NEW.new_account_date= now();
+      set NEW.mod_account_date= now();
+  END;
   $$
   ---------------------------------
+
+DELIMITER $$
+DROP TRIGGER IF EXISTS trigger_mod_account$$
   CREATE TRIGGER trigger_mod_account
- before UPDATE
+ BEFORE UPDATE
  ON cuentas FOR EACH ROW
  BEGIN
 
-      set NEW.mod_account= now();
-  END
+      set NEW.mod_account_date= now();
+  END;
   $$

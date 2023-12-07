@@ -59,24 +59,24 @@ public class UserDTO {
         this.id = id;
     }
 
-    private Date update_At;
+    private Date new_user_date;
 
-    public Date getUpdate_At() {
-        return update_At;
+    public Date getNew_user_date() {
+        return new_user_date;
     }
 
-    public void setUpdate_At(Date update_At) {
-        this.update_At = update_At;
+    public void setNew_user_date(Date new_user_date) {
+        this.new_user_date = new_user_date;
     }
 
-    public Date getMod_user() {
-        return mod_user;
+    public Date getMod_user_date() {
+        return mod_user_date;
     }
 
-    public void setMod_user(Date mod_user) {
-        this.mod_user = mod_user;
+    public void setMod_user_date(Date mod_user_date) {
+        this.mod_user_date = mod_user_date;
     }
 
-    private Date mod_user;
+    private Date mod_user_date;
 
 }
